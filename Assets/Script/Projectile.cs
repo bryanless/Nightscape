@@ -18,6 +18,10 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.isPaused)
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown(1))
         {
             GameObject projectile = Instantiate(obj, transform.position, Quaternion.identity);

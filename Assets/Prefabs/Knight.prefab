@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 4953932730445105115}
   - component: {fileID: 4953932730445105108}
   - component: {fileID: 4953932730445105112}
+  - component: {fileID: -8861678424554942278}
   - component: {fileID: 4953932730445105114}
   - component: {fileID: 4953932730445105110}
   - component: {fileID: 4953932730445105113}
   - component: {fileID: 4953932730445105109}
-  - component: {fileID: 3267429553180755249}
+  - component: {fileID: -4419069789345024621}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -106,6 +107,30 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &-8861678424554942278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4953932730445105111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fa57e039fe6ce46a8468a0295a4bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 00000000000000000000
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!95 &4953932730445105114
 Animator:
   serializedVersion: 3
@@ -180,7 +205,7 @@ MonoBehaviour:
   minDamage: 20
   maxDamage: 30
   projectileForce: 25
---- !u!114 &3267429553180755249
+--- !u!114 &-4419069789345024621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,18 +214,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4953932730445105111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760e12a1f0d6ceb45926cb83e84cc0c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6db1b1f516e0e4d498169ead1ac39588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 00000000000000000000
-  slots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  enemyCount: 0
+  slime: {fileID: 770958139340214659, guid: 0acdce352e8496f4dba887fe08a0daf9, type: 3}
+  player: {fileID: 4953932730445105111}

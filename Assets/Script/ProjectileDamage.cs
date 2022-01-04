@@ -8,7 +8,7 @@ public class ProjectileDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("enemy"))
+        if (collision.CompareTag("enemy") || collision.CompareTag("bullet"))
         {
             if (collision.GetComponent<EnemyReceiveDamage>() != null)
             {
