@@ -10,8 +10,10 @@ public class EnemyProjectileDamage : MonoBehaviour
     {
         if (collision.CompareTag("player"))
         {
+            PlayerStats.playerStats.DealDamage(damage);
             Destroy(gameObject);
         }
+        
 
     }
 }

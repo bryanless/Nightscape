@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 2108586888028278675, guid: ce220a20dccef8e4d93177e9d1a6e497, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 4953932730445105115, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
   minDamage: 10
   maxDamage: 15
   projectileForce: 10
