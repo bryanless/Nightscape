@@ -2927,6 +2927,10 @@ PrefabInstance:
       propertyPath: slots.Array.data[9]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4953932730445105108, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4953932730445105111, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
       propertyPath: m_Name
       value: Knight
