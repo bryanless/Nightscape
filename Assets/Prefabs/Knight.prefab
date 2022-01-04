@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4953932730445105110}
   - component: {fileID: 4953932730445105113}
   - component: {fileID: 4953932730445105109}
+  - component: {fileID: 3267429553180755249}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -179,3 +180,27 @@ MonoBehaviour:
   minDamage: 20
   maxDamage: 30
   projectileForce: 25
+--- !u!114 &3267429553180755249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4953932730445105111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760e12a1f0d6ceb45926cb83e84cc0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 00000000000000000000
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
