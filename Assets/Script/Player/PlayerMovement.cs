@@ -41,11 +41,11 @@ public class PlayerMovement : MonoBehaviour
             || Input.GetKey(KeyCode.S)
             || Input.GetKey(KeyCode.D))
         {
-            animator.SetBool("isWalking", true);
+            animator.SetBool("isRunning", true);
         }
         else if (!Input.anyKey)
         {
-            animator.SetBool("isWalking", false);
+            animator.SetBool("isRunning", false);
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             direction += Vector2.left;
-            Flip(false);
+            //Flip(false);
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             direction += Vector2.right;
-            Flip(true);
+            //Flip(true);
         }
     }
 

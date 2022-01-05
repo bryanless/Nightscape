@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public GameObject obj;
+    public GameObject player;
     public float minDamage;
     public float maxDamage;
     public float projectileForce;
@@ -24,13 +25,14 @@ public class Projectile : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
-            GameObject projectile = Instantiate(obj, transform.position, Quaternion.identity);
+            GameObject projectile = Instantiate(obj, player.transform.position, Quaternion.identity);
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 myPos = transform.position;
             Vector2 direction = (mousePos - myPos).normalized;
-            //projectile.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
+            //projectile.transform.rotation = Quaternion.Euler(Mathf.Cos(0), Mathf.Sin(0), 0);
             projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
             projectile.GetComponent<ProjectileDamage>().damage = Random.Range(minDamage, maxDamage);
+
         }
     }
 }
