@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 2108586888028278675, guid: ce220a20dccef8e4d93177e9d1a6e497, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 4953932730445105115, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
   minDamage: 1
   maxDamage: 5
   projectileForce: 10
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b022386d79277ac41b30c2f9820be942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 4953932730445105111, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
   obj: {fileID: 770958139340214659}
   speed: 3
 --- !u!1 &2339323755735502026
