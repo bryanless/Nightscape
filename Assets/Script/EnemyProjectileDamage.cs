@@ -12,8 +12,12 @@ public class EnemyProjectileDamage : MonoBehaviour
         {
             PlayerStats.playerStats.DealDamage(damage);
             Destroy(gameObject);
+
+        } else if (collision.CompareTag("bullet"))
+        {
+            Destroy(gameObject);
         }
-        
+
 
     }
 }

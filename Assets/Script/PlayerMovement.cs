@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         transform.Translate(direction * speed * Time.deltaTime);
-        SetAnimatorMovement(direction);
     }
 
     private void TakeInput()
@@ -63,13 +62,6 @@ public class PlayerMovement : MonoBehaviour
             direction += Vector2.right;
             Flip(true);
         }
-    }
-
-    private void SetAnimatorMovement(Vector2 direction)
-    {
-        animator.SetFloat("xDir", direction.x);
-        animator.SetFloat("yDir", direction.y);
-        print(animator.GetFloat("xDir"));
     }
 
     void Flip(bool direction)

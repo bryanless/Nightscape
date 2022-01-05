@@ -7,6 +7,8 @@ public class EnemyReceiveDamage : MonoBehaviour
 {
     public float health;
     public float maxHealth;
+    public LevelMechanic levelMechanic;
+    private int enemyCount;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class EnemyReceiveDamage : MonoBehaviour
     {
         if(health <= 0)
         {
+            levelMechanic.addDeath();
             Destroy(gameObject);
         }
     }

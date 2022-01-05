@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3312172820961065216}
   - component: {fileID: 770958139340214782}
   - component: {fileID: 770958139340214656}
+  - component: {fileID: 2716947096576536841}
   m_Layer: 0
   m_Name: Slime
   m_TagString: enemy
@@ -144,8 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621ed07ff7fa0d74dbbe95b542c1d5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 250
-  maxHealth: 250
+  health: 10
+  maxHealth: 10
+  obj: {fileID: 4953932730445105111, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
 --- !u!114 &770958139340214656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +162,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 2108586888028278675, guid: ce220a20dccef8e4d93177e9d1a6e497, type: 3}
   player: {fileID: 4953932730445105115, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
-  minDamage: 10
-  maxDamage: 15
+  minDamage: 1
+  maxDamage: 5
   projectileForce: 10
   cooldown: 5
+--- !u!114 &2716947096576536841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770958139340214659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b022386d79277ac41b30c2f9820be942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4953932730445105111, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
+  obj: {fileID: 770958139340214659}
+  speed: 3
