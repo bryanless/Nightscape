@@ -32,6 +32,6 @@ public class ShopMenu : MonoBehaviour
     public void CloseShop()
     {
         shopPanel.SetActive(false);
-        levelMechanic.startLevel(5);
+        levelMechanic.startLevel();
     }
 }

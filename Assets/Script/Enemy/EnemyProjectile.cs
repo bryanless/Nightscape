@@ -10,6 +10,7 @@ public class EnemyProjectile : MonoBehaviour
     public float maxDamage;
     public float projectileForce;
     public float cooldown;
+    private int lifeTime = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +22,9 @@ public class EnemyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
+
+    
 
     IEnumerator ShootPlayer()
     {
@@ -35,9 +37,12 @@ public class EnemyProjectile : MonoBehaviour
             Vector2 direction = (targetPos - myPos).normalized;
             projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
             projectile.GetComponent<EnemyProjectileDamage>().damage = Random.Range(minDamage, maxDamage);
+            Destroy(projectile, lifeTime);
             StartCoroutine(ShootPlayer());
         }
 
 
     }
+
+
 }

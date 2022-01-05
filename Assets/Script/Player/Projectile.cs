@@ -9,11 +9,12 @@ public class Projectile : MonoBehaviour
     public float minDamage;
     public float maxDamage;
     public float projectileForce;
+    private int lifeTime;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        lifeTime = 5;
     }
 
     // Update is called once per frame
@@ -33,6 +34,7 @@ public class Projectile : MonoBehaviour
             projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
             projectile.GetComponent<ProjectileDamage>().damage = Random.Range(minDamage, maxDamage);
 
+            Destroy(projectile, lifeTime);
         }
     }
 }

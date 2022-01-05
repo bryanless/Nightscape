@@ -5,6 +5,8 @@ using UnityEngine;
 public class LevelMechanic : MonoBehaviour
 {
     public int enemyCount;
+    private int enemyAmount;
+    private int enemyDead;
     public GameObject slime;
     public GameObject player;
     public ShopMenu shopMenu;
@@ -12,6 +14,8 @@ public class LevelMechanic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyDead = 0;
+
         for (int i = 0; i < 5; i++)
         {
             SpawnEnemy(slime);
@@ -35,15 +39,16 @@ public class LevelMechanic : MonoBehaviour
 
     public void addDeath()
     {
-        enemyCount--;
+        enemyDead++;
 
         endLevel();
     }
 
-    public void startLevel(float enemyCount)
+    public void startLevel()
     {
-        this.enemyCount = 0;
-        for (int i = 0; i < enemyCount; i++)
+        enemyDead = 0;
+        enemyAmount = this.enemyCount + 2;
+        for (int i = 0; i < enemyAmount; i++)
         {
             SpawnEnemy(slime);
         }
@@ -51,7 +56,7 @@ public class LevelMechanic : MonoBehaviour
 
     void endLevel()
     {
-        if (enemyCount <= 0)
+        if (enemyCount <= enemyDead)
         {
             // Level complete
             // Buka panel, timer
