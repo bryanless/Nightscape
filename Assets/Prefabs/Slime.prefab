@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621ed07ff7fa0d74dbbe95b542c1d5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  health: 150
+  maxHealth: 150
   levelMechanic: {fileID: 0}
   healthBar: {fileID: 2339323755735502026}
   healthBarSlider: {fileID: 7421356900263767502}
