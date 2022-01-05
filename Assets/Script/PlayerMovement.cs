@@ -19,8 +19,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        TakeInput();
-        Move();
+        if (!PauseMenu.isPaused)
+        {
+
+            TakeInput();
+            Move();
+        }
     }
 
     private void Move()

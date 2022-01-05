@@ -17,12 +17,12 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 myPos = transform.position;
-        Vector2 targetPos = player.transform.position;
-        Vector2 direction = (targetPos - myPos).normalized;
+        //Vector2 myPos = transform.position;
+        //Vector2 targetPos = player.transform.position;
+        //Vector2 direction = (targetPos - myPos).normalized;
         //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //rb.rotation = angle;
         //movement = direction;
-        obj.GetComponent<Rigidbody2D>().velocity = direction * speed;
+        //obj.GetComponent<Rigidbody2D>().velocity = direction * speed;
     }
 }
