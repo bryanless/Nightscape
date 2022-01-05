@@ -7,6 +7,7 @@ public class LevelMechanic : MonoBehaviour
     public int enemyCount;
     public GameObject slime;
     public GameObject player;
+    public ShopMenu shopMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +40,22 @@ public class LevelMechanic : MonoBehaviour
         endLevel();
     }
 
+    public void startLevel(float enemyCount)
+    {
+        this.enemyCount = 0;
+        for (int i = 0; i < enemyCount; i++)
+        {
+            SpawnEnemy(slime);
+        }
+    }
+
     void endLevel()
     {
-        if (enemyCount == 0)
+        if (enemyCount <= 0)
         {
             // Level complete
             // Buka panel, timer
+            shopMenu.OpenShop(30);
         }
     }
 }

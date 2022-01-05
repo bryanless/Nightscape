@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 4953932730445105110}
   - component: {fileID: 4953932730445105113}
   - component: {fileID: 4953932730445105109}
-  - component: {fileID: -4419069789345024621}
   m_Layer: 0
   m_Name: Knight
   m_TagString: player
@@ -78,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b846f6117ee4f5b458d2ab0f9840221c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -205,18 +204,3 @@ MonoBehaviour:
   minDamage: 20
   maxDamage: 30
   projectileForce: 25
---- !u!114 &-4419069789345024621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4953932730445105111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db1b1f516e0e4d498169ead1ac39588, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyCount: 0
-  slime: {fileID: 770958139340214659, guid: 0acdce352e8496f4dba887fe08a0daf9, type: 3}
-  player: {fileID: 4953932730445105111}
