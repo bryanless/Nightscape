@@ -145,6 +145,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f99a0c21a3b164fa5d6b8bfb4d01a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: health_potion
   playerInventory: {fileID: -8861678424554942278, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
   inventoryIndex: 0
-  itemAmountText: {fileID: 4214500564054028545, guid: aa2997a638b77e145a4f2cd5026f1ccc, type: 3}
+  itemAmountText: {fileID: 4214500564054028547, guid: aa2997a638b77e145a4f2cd5026f1ccc, type: 3}
+  items:
+  - {fileID: 4714410188859527597, guid: 7ef9afce9e791054b959822bb848a124, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
