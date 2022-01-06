@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelMechanic : MonoBehaviour
 {
     public int enemyCount;
+    public int timer;
     private int enemyAmount;
     private int enemyDead;
     public GameObject slime;
@@ -14,9 +15,11 @@ public class LevelMechanic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shopMenu.isOpen = false;
         enemyDead = 0;
+        enemyAmount = 0;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < enemyCount; i++)
         {
             SpawnEnemy(slime);
         }
@@ -34,7 +37,7 @@ public class LevelMechanic : MonoBehaviour
         Vector2 enemyPosition = new Vector2(player.transform.position.x + positionX, player.transform.position.y + positionY);
         var enemy = Instantiate(enemyType, enemyPosition, Quaternion.identity);
         enemy.GetComponent<EnemyReceiveDamage>().levelMechanic = this;
-        enemyCount++;
+        enemyAmount++;
     }
 
     public void addDeath()
@@ -47,9 +50,9 @@ public class LevelMechanic : MonoBehaviour
     public void startLevel()
     {
         enemyDead = 0;
-        enemyCount = 0;
-        enemyAmount = enemyCount + 2;
-        for (int i = 0; i < enemyAmount; i++)
+        enemyAmount = 0;
+        enemyCount += 2;
+        for (int i = 0; i < enemyCount; i++)
         {
             SpawnEnemy(slime);
         }
@@ -57,11 +60,11 @@ public class LevelMechanic : MonoBehaviour
 
     void endLevel()
     {
-        if (enemyCount <= enemyDead)
+        if (enemyAmount <= enemyDead)
         {
             // Level complete
             // Buka panel, timer
-            shopMenu.OpenShop(30);
+            shopMenu.OpenShop(timer);
         }
     }
 }

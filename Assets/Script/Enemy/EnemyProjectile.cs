@@ -38,9 +38,5 @@ public class EnemyProjectile : MonoBehaviour
             Destroy(projectile, lifeTime);
             StartCoroutine(ShootPlayer());
         }
-
-
     }
-
-
 }
