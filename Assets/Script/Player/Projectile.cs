@@ -30,7 +30,10 @@ public class Projectile : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 myPos = transform.position;
             Vector2 direction = (mousePos - myPos).normalized;
-            //projectile.transform.rotation = Quaternion.Euler(Mathf.Cos(0), Mathf.Sin(0), 0);
+            var angle = Mathf.Atan2(direction.y, direction.x);
+            angle *= (180 / Mathf.PI);
+
+            projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
             projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
             projectile.GetComponent<ProjectileDamage>().damage = Random.Range(minDamage, maxDamage);
 

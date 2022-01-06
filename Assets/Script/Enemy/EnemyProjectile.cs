@@ -24,8 +24,6 @@ public class EnemyProjectile : MonoBehaviour
     {
     }
 
-    
-
     IEnumerator ShootPlayer()
     {
         yield return new WaitForSeconds(cooldown);

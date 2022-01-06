@@ -47,7 +47,8 @@ public class LevelMechanic : MonoBehaviour
     public void startLevel()
     {
         enemyDead = 0;
-        enemyAmount = this.enemyCount + 2;
+        enemyCount = 0;
+        enemyAmount = enemyCount + 2;
         for (int i = 0; i < enemyAmount; i++)
         {
             SpawnEnemy(slime);

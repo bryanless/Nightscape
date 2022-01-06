@@ -8,20 +8,19 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private Vector2 direction;
     private Animator animator;
-
     private bool facingRight;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         facingRight = true;
+
     }
 
     void Update()
     {
         if (!PauseMenu.isPaused)
         {
-
             TakeInput();
             Move();
         }
