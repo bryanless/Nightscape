@@ -14,6 +14,11 @@ public class EnemyReceiveDamage : MonoBehaviour
     public GameObject healthBar;
     public Slider healthBarSlider;
 
+    public GameObject lootDrop1;
+    public GameObject lootDrop2;
+    public GameObject lootDrop3;
+    private int lootDropCount1, lootDropCount2, lootDropCount3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +42,7 @@ public class EnemyReceiveDamage : MonoBehaviour
 
     private void CheckOverHeal()
     {
-        if(health > maxHealth)
+        if (health > maxHealth)
         {
             health = maxHealth;
         }
@@ -45,10 +50,41 @@ public class EnemyReceiveDamage : MonoBehaviour
 
     private void CheckDeath()
     {
-        if(health <= 0)
+        if (health <= 0)
         {
             levelMechanic.addDeath();
             Destroy(gameObject);
+
+            lootDropCount1 = UnityEngine.Random.Range(-8, 2);
+            lootDropCount2 = UnityEngine.Random.Range(-3, 2);
+            lootDropCount3 = UnityEngine.Random.Range(1, 3);
+
+            if(lootDropCount1 < 0)
+            {
+                lootDropCount1 = 0;
+            }
+            if (lootDropCount2 < 0)
+            {
+                lootDropCount2 = 0;
+            }
+
+            for (int i = 0; i < lootDropCount1; i++)
+            {
+                Vector2 newPosition = new Vector2(transform.position.x + UnityEngine.Random.Range(-2, 5), transform.position.y + UnityEngine.Random.Range(-2, 5));
+                Instantiate(lootDrop1, newPosition, Quaternion.identity);
+            }
+            for (int i = 0; i < lootDropCount2; i++)
+            {
+                Vector2 newPosition = new Vector2(transform.position.x + UnityEngine.Random.Range(-2, 5), transform.position.y + UnityEngine.Random.Range(-2, 5));
+                Instantiate(lootDrop2, newPosition, Quaternion.identity);
+            }
+            for (int i = 0; i < lootDropCount3; i++)
+            {
+                Vector2 newPosition = new Vector2(transform.position.x + UnityEngine.Random.Range(-2, 5), transform.position.y + UnityEngine.Random.Range(-2, 5));
+                Instantiate(lootDrop3, newPosition, Quaternion.identity);
+            }
+
+
         }
     }
 
@@ -60,6 +96,6 @@ public class EnemyReceiveDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

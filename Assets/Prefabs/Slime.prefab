@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 770958139340214657}
   - component: {fileID: 770958139340214783}
   - component: {fileID: 3312172820961065216}
+  - component: {fileID: 5793910560736307853}
   - component: {fileID: 770958139340214782}
   - component: {fileID: 770958139340214656}
   - component: {fileID: 2716947096576536841}
-  - component: {fileID: 5793910560736307853}
   m_Layer: 0
   m_Name: Slime
   m_TagString: enemy
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770958139340214659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.89, y: -3.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 1648795651014897625}
@@ -135,6 +135,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.25}
   m_EdgeRadius: 0
+--- !u!50 &5793910560736307853
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770958139340214659}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &770958139340214782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +173,9 @@ MonoBehaviour:
   levelMechanic: {fileID: 0}
   healthBar: {fileID: 2339323755735502026}
   healthBarSlider: {fileID: 7421356900263767502}
+  lootDrop1: {fileID: 6404437579126623042, guid: 7f76c880129c1fa4dad3bdccc4bbd885, type: 3}
+  lootDrop2: {fileID: 8083450448852714800, guid: 6a217de7c46099d478155ba5670d483b, type: 3}
+  lootDrop3: {fileID: 1170664817955566013, guid: af60a076abd72b7419b686de1fb58bc8, type: 3}
 --- !u!114 &770958139340214656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,27 +209,6 @@ MonoBehaviour:
   player: {fileID: 4953932730445105111, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
   obj: {fileID: 770958139340214659}
   speed: 2
---- !u!50 &5793910560736307853
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770958139340214659}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &2339323755735502026
 GameObject:
   m_ObjectHideFlags: 0
