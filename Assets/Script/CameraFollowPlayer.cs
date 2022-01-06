@@ -13,14 +13,28 @@ public class CameraFollowPlayer : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
         if (player != null)
         {
-            Vector3 newPosition = Vector3.Lerp(transform.position, player.transform.position + offset, smoothing);
+            //float minPositionX = -20;
+            //float maxPositionX = 20;
+            //float minPositionY = -15;
+            //float maxPositionY = 15;
+
+            //Vector3 positionMax = new Vector3(
+            //    Mathf.Clamp(player.transform.position.x, minPositionX, maxPositionX),
+            //    Mathf.Clamp(player.transform.position.y, minPositionY, maxPositionY),
+            //    transform.position.z);
+
+            Vector3 newPosition = Vector3.Lerp(positionMax, player.transform.position + offset, smoothing);
             transform.position = newPosition;
         }
-
     }
 }
