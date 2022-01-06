@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemUse : MonoBehaviour
+public class ItemAmount : MonoBehaviour
 {
     public PlayerInventory playerInventory;
     public int inventoryIndex;
@@ -18,19 +18,13 @@ public class ItemUse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void Use()
-    {
-        playerInventory.itemAmount[inventoryIndex]--;
-        itemAmountText.GetComponent<Text>().text = playerInventory.itemAmount[inventoryIndex].ToString();
-
-        if (playerInventory.itemAmount[inventoryIndex] == 0)
+        if (playerInventory.itemAmount[inventoryIndex] > 1)
         {
-            Destroy(gameObject);
-            Destroy(itemAmountText);
-            playerInventory.isFull[inventoryIndex] = false;
+            itemAmountText.GetComponent<Text>().text = playerInventory.itemAmount[inventoryIndex].ToString();
+        }
+        else
+        {
+            itemAmountText.GetComponent<Text>().text = "";
         }
     }
 }

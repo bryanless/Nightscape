@@ -10,7 +10,7 @@ public class PlayerHands : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.GetComponent<SpriteRenderer>().sprite = handList[0];
+        //player.GetComponent<SpriteRenderer>().sprite = handList[0];
     }
 
     // Update is called once per frame

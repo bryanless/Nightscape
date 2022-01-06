@@ -6,6 +6,8 @@ public class PlayerInventory : MonoBehaviour
 {
     public bool[] isFull;
     public GameObject[] slots;
+    public GameObject[] items;
+    public int[] itemAmount;
     
     // Start is called before the first frame update
     void Start()
