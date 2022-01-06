@@ -33,7 +33,7 @@ public class CameraFollowPlayer : MonoBehaviour
             //    Mathf.Clamp(player.transform.position.y, minPositionY, maxPositionY),
             //    transform.position.z);
 
-            Vector3 newPosition = Vector3.Lerp(positionMax, player.transform.position + offset, smoothing);
+            Vector3 newPosition = Vector3.Lerp(transform.position, player.transform.position + offset, smoothing);
             transform.position = newPosition;
         }
     }
