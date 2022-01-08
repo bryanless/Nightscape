@@ -2009,8 +2009,12 @@ MonoBehaviour:
   player: {fileID: 4953932729396283268}
   healthText: {fileID: 389850644}
   healthSlider: {fileID: 1558491043}
+  shieldText: {fileID: 1692831828}
+  shieldSlider: {fileID: 1884605970}
   health: 0
   maxHealth: 50
+  shield: 0
+  maxShield: 0
   coins_gold: 0
   coins_silver: 0
   coins_bronze: 0
