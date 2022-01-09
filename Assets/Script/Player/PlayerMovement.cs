@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         transform.Translate(direction * speed * Time.deltaTime);
+
+        transform.position = new Vector2(
+                Mathf.Clamp(transform.position.x, -31.25f, 31.25f),
+                Mathf.Clamp(transform.position.y, -16.5f, 17.5f));
     }
 
     private void TakeInput()
