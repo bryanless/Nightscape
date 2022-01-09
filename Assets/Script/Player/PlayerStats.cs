@@ -20,6 +20,8 @@ public class PlayerStats : MonoBehaviour
     public float shield;
     public float maxShield;
 
+    private bool checkRegenIsActive;
+
     public int coins_gold, coins_silver, coins_bronze;
     public Text goldCoinsValueText, silverCoinsValueText, bronzeCoinsValueText;
 
@@ -44,6 +46,7 @@ public class PlayerStats : MonoBehaviour
         health = maxHealth;
         maxShield = Mathf.Ceil(maxHealth / 3);
         shield = maxShield;
+        checkRegenIsActive = false;
         setHealthUI();
         setShieldUI();
         setCoinsUI();
@@ -61,12 +64,16 @@ public class PlayerStats : MonoBehaviour
         float shieldDamage = (damage / 4);
         shield -= shieldDamage;
 
-        StartCoroutine(RegenShield());
-
-        if (shield <= 0)
+        if (shield < 0)
         {
             shield = 0;
             health -= damage;
+        }
+
+        if(shield < maxShield && !checkRegenIsActive)
+        {
+            checkRegenIsActive = true;
+            StartCoroutine(RegenShield());
         }
 
         CheckDeath();
@@ -83,15 +90,17 @@ public class PlayerStats : MonoBehaviour
 
     private IEnumerator RegenShield()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
 
         while (shield < maxShield)
         {
             shield += 1;
-            CheckOverHeal();
+            CheckOverShield();
             setShieldUI();
             yield return new WaitForSeconds(5);
         }
+
+        checkRegenIsActive = false;
 
     }
 
@@ -113,6 +122,10 @@ public class PlayerStats : MonoBehaviour
         {
             health = maxHealth;
         }
+    }
+
+    private void CheckOverShield()
+    {
         if (shield > maxShield)
         {
             shield = maxShield;
