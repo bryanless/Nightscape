@@ -43,8 +43,9 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = 50;
         health = maxHealth;
-        maxShield = Mathf.Ceil(maxHealth / 3);
+        maxShield = Mathf.Ceil(maxHealth / 3f);
         shield = maxShield;
         checkRegenIsActive = false;
         setHealthUI();
@@ -70,7 +71,7 @@ public class PlayerStats : MonoBehaviour
             health -= damage;
         }
 
-        if(shield < maxShield && !checkRegenIsActive)
+        if (shield < maxShield && !checkRegenIsActive)
         {
             checkRegenIsActive = true;
             StartCoroutine(RegenShield());
@@ -104,13 +105,13 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    private void setHealthUI()
+    public void setHealthUI()
     {
         healthSlider.value = CalculateHealthPercentage();
         healthText.text = Mathf.Ceil(health).ToString() + " / " + Mathf.Ceil(maxHealth).ToString();
     }
 
-    private void setShieldUI()
+    public void setShieldUI()
     {
         shieldSlider.value = CalculateShieldPercentage();
         shieldText.text = Mathf.Ceil(shield).ToString() + " / " + Mathf.Ceil(maxShield).ToString();
@@ -167,12 +168,52 @@ public class PlayerStats : MonoBehaviour
             coins_bronze += coins.pickupQuantity;
             bronzeCoinsValueText.text = coins_bronze.ToString();
         }
+    }
 
+    public void MinusCoins(ShopItem shopItem)
+    {
+        shopItem.isBuyValid = false;
 
+        if (shopItem.coinType == ShopItem.CoinType.coins_gold)
+        {
+            if (coins_gold >= shopItem.price)
+            {
+                coins_gold -= shopItem.price;
+                goldCoinsValueText.text = coins_gold.ToString();
+                shopItem.isBuyValid = true;
+            }
+        }
+        else if (shopItem.coinType == ShopItem.CoinType.coins_silver)
+        {
+            if (coins_silver >= shopItem.price)
+            {
+                coins_silver -= shopItem.price;
+                silverCoinsValueText.text = coins_silver.ToString();
+                shopItem.isBuyValid = true;
+            }
+        }
+        else if (shopItem.coinType == ShopItem.CoinType.coins_bronze)
+        {
+            if (coins_bronze >= shopItem.price)
+            {
+                coins_bronze -= shopItem.price;
+                bronzeCoinsValueText.text = coins_bronze.ToString();
+                shopItem.isBuyValid = true;
+            }
+        }
+    }
 
+    public void levelUp()
+    {
+        float maxHealthTemp = maxHealth;
+        maxHealth = (maxHealthTemp * (105f / 100f));
+        HealCharacter(maxHealthTemp * (5f/ 100f));
+        setHealthUI();
 
+        maxShield = Mathf.Ceil(maxHealth / 3f);
+        shield = maxShield;
 
-
+        setShieldUI();
     }
 
     // Update is called once per frame

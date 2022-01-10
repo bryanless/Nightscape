@@ -6,6 +6,7 @@ public class PlayerHands : MonoBehaviour
 {
     public GameObject player;
     public Sprite[] handList;
+    public GameObject[] gunList;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,11 @@ public class PlayerHands : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
 
+    public void ChangeGun()
+    {
+        // which gun is bought/clicked
+        //player.GetComponent<SpriteRenderer>().sprite = handList[];
     }
 }
