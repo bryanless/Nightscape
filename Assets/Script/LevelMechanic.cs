@@ -54,10 +54,21 @@ public class LevelMechanic : MonoBehaviour
     public void startLevel()
     {
         level += 1;
+        Debug.Log("level " + level);
 
         enemyDead = 0;
         enemyAmount = 0;
+        //if (level == 2)
+        //{
+        //    enemyCount += 2;
+        //}
+        //else
+        //{
+        //    enemyCount += Random.Range(1, level);
+        //}
+
         enemyCount += 2;
+
 
         for (int i = 0; i < enemyCount; i++)
         {
@@ -81,6 +92,7 @@ public class LevelMechanic : MonoBehaviour
 
     void endLevel()
     {
+        Debug.Log("end level | " + enemyAmount + " "  + enemyDead);
         if (enemyAmount <= enemyDead)
         {
             // Level complete

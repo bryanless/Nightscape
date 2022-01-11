@@ -8,11 +8,13 @@ public class EnemyMovement : MonoBehaviour
     public GameObject obj;
     public float speed;
     private float cooldownMovement;
+    private Animator animator;
     //private Vector2 movement;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         player = FindObjectOfType<PlayerMovement>().gameObject;
         StartCoroutine(TrackPlayer());
     }
@@ -37,9 +39,11 @@ public class EnemyMovement : MonoBehaviour
             }
 
             obj.GetComponent<Rigidbody2D>().velocity = direction * speed;
+            animator.SetBool("isWalking", true);
             yield return new WaitForSeconds(cooldownMovement);
             direction = Vector3.zero;
             obj.GetComponent<Rigidbody2D>().velocity = direction * speed;
+            animator.SetBool("isWalking", false);
             yield return new WaitForSeconds(cooldownMovement);
 
             //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

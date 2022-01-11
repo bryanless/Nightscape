@@ -25,6 +25,8 @@ public class PlayerStats : MonoBehaviour
     public int coins_gold, coins_silver, coins_bronze;
     public Text goldCoinsValueText, silverCoinsValueText, bronzeCoinsValueText;
 
+    public List<ShopItem> gunList;
+
     void Awake()
     {
         //function for not losing data after changing scene
@@ -43,6 +45,7 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gunList = new List<ShopItem>();
         maxHealth = 50;
         health = maxHealth;
         maxShield = Mathf.Ceil(maxHealth / 3f);
@@ -214,6 +217,19 @@ public class PlayerStats : MonoBehaviour
         shield = maxShield;
 
         setShieldUI();
+    }
+
+    public bool CheckGun(ShopItem shopItem)
+    {
+        foreach (var gun in gunList)
+        {
+            if (shopItem == gun)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     // Update is called once per frame

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHands : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject playerHand;
     public Sprite[] handList;
     public GameObject[] gunList;
 
@@ -19,9 +19,8 @@ public class PlayerHands : MonoBehaviour
     {
     }
 
-    public void ChangeGun()
+    public void ChangeGun(int gunIndex)
     {
-        // which gun is bought/clicked
-        //player.GetComponent<SpriteRenderer>().sprite = handList[];
+        playerHand.GetComponent<SpriteRenderer>().sprite = handList[gunIndex];
     }
 }

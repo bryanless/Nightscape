@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGun : MonoBehaviour
+public class ShopMechanic : MonoBehaviour
 {
-    public static PlayerGun playerGun;
-    public List<GameObject> gunList;
+    public GameObject[] slots;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +16,5 @@ public class PlayerGun : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void AddGun(ShopItem gameObject)
-    {
-        //gunList.Add(gameObject);
     }
 }

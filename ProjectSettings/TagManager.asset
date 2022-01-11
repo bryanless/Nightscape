@@ -8,6 +8,8 @@ TagManager:
   - player
   - item
   - bullet
+  - playerHand
+  - shopMenu
   layers:
   - Default
   - TransparentFX

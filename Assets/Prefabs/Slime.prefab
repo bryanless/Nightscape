@@ -100,7 +100,7 @@ Animator:
   m_GameObject: {fileID: 770958139340214659}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f4a7dd0ee5379ea4c944c8adbcfb257d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1302e62f2ba72aa498a5ef4533d173b0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   maxDamage: 5
   projectileForce: 10
   cooldown: 5
+  slime: {fileID: 770958139340214659}
 --- !u!114 &2716947096576536841
 MonoBehaviour:
   m_ObjectHideFlags: 0
