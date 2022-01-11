@@ -51,6 +51,7 @@ public class EnemyReceiveDamage : MonoBehaviour
     {
         if (health <= 0)
         {
+            Debug.Log(health);
             levelMechanic.addDeath();
             Destroy(gameObject);
 
