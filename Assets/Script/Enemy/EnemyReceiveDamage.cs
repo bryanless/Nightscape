@@ -55,9 +55,9 @@ public class EnemyReceiveDamage : MonoBehaviour
             levelMechanic.addDeath();
             Destroy(gameObject);
 
-            lootDropCount1 = UnityEngine.Random.Range(-8, 2);
-            lootDropCount2 = UnityEngine.Random.Range(-3, 2);
-            lootDropCount3 = UnityEngine.Random.Range(1, 3);
+            lootDropCount1 = UnityEngine.Random.Range(-5, 8);
+            lootDropCount2 = UnityEngine.Random.Range(-2, 12);
+            lootDropCount3 = UnityEngine.Random.Range(1, 15);
 
             if(lootDropCount1 < 0)
             {

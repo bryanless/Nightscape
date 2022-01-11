@@ -13,11 +13,13 @@ public class LevelMechanic : MonoBehaviour
     public GameObject player;
     public ShopMenu shopMenu;
     public GameObject[] items;
+    private List<GameObject> spawnItems;
 
     // Start is called before the first frame update
     void Start()
     {
         level = 1;
+        spawnItems = new List<GameObject>();
 
         shopMenu.isOpen = false;
         enemyDead = 0;
@@ -77,9 +79,10 @@ public class LevelMechanic : MonoBehaviour
             //float minPositionY = -13f;
             //float maxPositionY = 13;
 
-
+            // Spawn potion and food
             Vector2 itemPosition = new Vector2(Random.Range(-23, 24), Random.Range(-13, 13));
-            Instantiate(items[0], itemPosition, Quaternion.identity);
+            GameObject item = Instantiate(items[Random.Range(0,8)], itemPosition, Quaternion.identity);
+            spawnItems.Add(item);
         }
 
         PlayerStats.playerStats.levelUp();
@@ -90,7 +93,7 @@ public class LevelMechanic : MonoBehaviour
         if (enemyAmount <= enemyDead)
         {
             // Level complete
-            // Buka panel, timer
+            spawnItems.Clear();
             shopMenu.OpenShop(timer);
         }
     }

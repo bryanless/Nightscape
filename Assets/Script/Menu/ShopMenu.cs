@@ -11,15 +11,18 @@ public class ShopMenu : MonoBehaviour
     public bool isOpen;
     public GameObject[] shopItemButton;
     public ShopMechanic shopMechanic;
+    public GameObject shopItemPriceText;
 
     private List<int> shownShopItemIndex;
     private List<GameObject> shownShopItem;
+    private List<GameObject> shownShopItemPrice;
 
     // Start is called before the first frame update
     void Start()
     {
         shownShopItemIndex = new List<int>();
         shownShopItem = new List<GameObject>();
+        shownShopItemPrice = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -45,7 +48,7 @@ public class ShopMenu : MonoBehaviour
             }
         }
 
-        //Random
+        //Random shop item
         for (int i = 0; i < 3; i++)
         {
             int shopItemIndex = Random.Range(0, shopItemButton.Length);
@@ -65,6 +68,10 @@ public class ShopMenu : MonoBehaviour
 
             GameObject shopItem = Instantiate(shopItemButton[shopItemIndex], shopMechanic.slots[i].transform, false);
             shownShopItem.Add(shopItem);
+
+            shopItemPriceText.GetComponent<Text>().text = shopItemButton[shopItemIndex].GetComponent<ShopItem>().price.ToString();
+            GameObject itemPrice = Instantiate(shopItemPriceText, shopMechanic.slots[i].transform, false);
+            shownShopItemPrice.Add(itemPrice);
         }
 
         shownShopItemIndex.Clear();
@@ -81,6 +88,12 @@ public class ShopMenu : MonoBehaviour
         {
             Destroy(item);
         }
+
+        foreach(GameObject price in shownShopItemPrice)
+        {
+            Destroy(price);
+        }
+        shownShopItemPrice.Clear();
 
         isOpen = false;
         shopPanel.SetActive(false);

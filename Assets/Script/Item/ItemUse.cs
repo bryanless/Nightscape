@@ -9,14 +9,10 @@ public class ItemUse : MonoBehaviour
     public PlayerInventory playerInventory;
     public int inventoryIndex;
     public GameObject itemAmountText;
-    public GameObject[] items;
-
-    private int healthPotion;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthPotion = 5;
         playerInventory = GameObject.FindGameObjectWithTag("player").GetComponent<PlayerInventory>();
     }
 
@@ -48,11 +44,31 @@ public class ItemUse : MonoBehaviour
     {
         switch (itemName)
         {
-            case "health_potion":
-                PlayerStats.playerStats.HealCharacter(healthPotion);
+            case "potion_blue":
+                PlayerStats.playerStats.HealCharacter(10);
+                break;
+            case "potion_red":
+                PlayerStats.playerStats.HealCharacter(20);
+                break;
+            case "potion_green":
+                PlayerStats.playerStats.HealCharacter(5);
+                break;
+            case "food_shrimp":
+                PlayerStats.playerStats.HealCharacter(10);
+                break;
+            case "food_chicken":
+                PlayerStats.playerStats.HealCharacter(15);
+                break;
+            case "food_fish":
+                PlayerStats.playerStats.HealCharacter(20);
+                break;
+            case "food_burger":
+                PlayerStats.playerStats.HealCharacter(25);
+                break;
+            case "food_soup":
+                PlayerStats.playerStats.HealCharacter(30);
                 break;
             default:
-                // code block
                 break;
         }
     }
