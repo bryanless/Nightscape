@@ -8,6 +8,7 @@ public class LevelMechanic : MonoBehaviour
     public int timer;
     private int enemyAmount;
     private int enemyDead;
+    private float enemySpeed;
     public int level;
     public GameObject slime;
     public GameObject player;
@@ -18,6 +19,7 @@ public class LevelMechanic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemySpeed = 0;
         level = 1;
         spawnItems = new List<GameObject>();
 
@@ -48,8 +50,11 @@ public class LevelMechanic : MonoBehaviour
             enemy.GetComponent<EnemyReceiveDamage>().maxHealth += (PlayerStats.playerStats.maxHealth * (150f / 100f));
             enemy.GetComponent<EnemyProjectile>().minDamage += ((PlayerStats.playerStats.maxHealth) * (1f / 100f) * (level));
             enemy.GetComponent<EnemyProjectile>().maxDamage += ((PlayerStats.playerStats.maxHealth) * (5f / 100f) * (level));
+            enemy.GetComponent<EnemyMovement>().speed += enemySpeed;
         }
         enemyAmount++;
+
+        enemySpeed += 0.01f;
     }
 
     public void addDeath()
@@ -81,7 +86,7 @@ public class LevelMechanic : MonoBehaviour
 
             // Spawn potion and food
             Vector2 itemPosition = new Vector2(Random.Range(-23, 24), Random.Range(-13, 13));
-            GameObject item = Instantiate(items[Random.Range(0,8)], itemPosition, Quaternion.identity);
+            GameObject item = Instantiate(items[Random.Range(0, 8)], itemPosition, Quaternion.identity);
             spawnItems.Add(item);
         }
 

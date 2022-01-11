@@ -9,11 +9,12 @@ public class EnemyMovement : MonoBehaviour
     public float speed;
     private float cooldownMovement;
     private Animator animator;
-    //private Vector2 movement;
+    private bool facingRight;
 
     // Start is called before the first frame update
     void Start()
     {
+        facingRight = true;
         animator = GetComponent<Animator>();
         player = FindObjectOfType<PlayerMovement>().gameObject;
         StartCoroutine(TrackPlayer());
@@ -22,6 +23,24 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var localVelocity = transform.InverseTransformDirection(obj.GetComponent<Rigidbody2D>().velocity);
+        if (localVelocity.x < 0 && facingRight)
+        {
+            facingRight = false;
+
+            // Multiply the player's x local scale by -1
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        } else if (localVelocity.x > 0 && !facingRight)
+        {
+            facingRight = true;
+
+            // Multiply the player's x local scale by -1
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
     }
 
     IEnumerator TrackPlayer()
@@ -45,10 +64,6 @@ public class EnemyMovement : MonoBehaviour
             obj.GetComponent<Rigidbody2D>().velocity = direction * speed;
             animator.SetBool("isWalking", false);
             yield return new WaitForSeconds(cooldownMovement);
-
-            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            //rb.rotation = angle;
-            //movement = direction;
 
             StartCoroutine(TrackPlayer());
         }

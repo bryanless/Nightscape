@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 1668276689}
   - component: {fileID: 1668276688}
   m_Layer: 5
-  m_Name: NightScape
+  m_Name: Game Over
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,10 +601,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1868421872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a91518d32dd9294c965a9a1093da8b4, type: 3}
+  m_Script: {fileID: 11500000, guid: acdadf784b521c24d9f65f6b4ac575f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsPanel: {fileID: 0}
 --- !u!114 &1868421874
 MonoBehaviour:
   m_ObjectHideFlags: 0
