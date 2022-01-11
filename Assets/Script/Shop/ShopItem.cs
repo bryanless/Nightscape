@@ -9,6 +9,9 @@ public class ShopItem : MonoBehaviour
 
     public Button button;
     public int price;
+    public int minDamage;
+    public int maxDamage;
+    public float projectileCooldown;
     public enum CoinType { coins_gold, coins_silver, coins_bronze };
     public CoinType coinType;
     public bool isBuyValid;
@@ -35,7 +38,7 @@ public class ShopItem : MonoBehaviour
 
         if (PlayerStats.playerStats.CheckGun(this))
         {
-            playerHands.ChangeGun(gunIndex);
+            playerHands.ChangeGun(this, gunIndex);
 
             button.interactable = false;
             shopMenu.CloseShop();
@@ -45,7 +48,7 @@ public class ShopItem : MonoBehaviour
             PlayerStats.playerStats.MinusCoins(this);
             if (isBuyValid)
             {
-                playerHands.ChangeGun(gunIndex);
+                playerHands.ChangeGun(this, gunIndex);
                 PlayerStats.playerStats.gunList.Add(this);
                 isSold = true;
                 button.interactable = false;

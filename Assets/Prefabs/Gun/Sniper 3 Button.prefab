@@ -147,6 +147,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 2227910494488383317}
   price: 100
+  minDamage: 800
+  maxDamage: 1000
+  projectileCooldown: 2
   coinType: 0
   isBuyValid: 0
   isSold: 0

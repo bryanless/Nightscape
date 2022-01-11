@@ -5621,7 +5621,7 @@ MonoBehaviour:
   maxHealth: 0
   shield: 0
   maxShield: 0
-  coins_gold: 100
+  coins_gold: 1000
   coins_silver: 0
   coins_bronze: 0
   goldCoinsValueText: {fileID: 444487619}
@@ -11628,37 +11628,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1707414576 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4353671932550339317, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
-  m_PrefabInstance: {fileID: 4953932729396283267}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1707414577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707414576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a97b9eec18cc2fe4c9f228103439c243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHand: {fileID: 1707414576}
-  handList:
-  - {fileID: 21300000, guid: b2a3f9280f1264b43adfb65743ed556a, type: 3}
-  - {fileID: 21300000, guid: 335873d8e86c4694288d433ee744f82d, type: 3}
-  - {fileID: 21300000, guid: 71334efc9fbc6ed4ab72015a48159556, type: 3}
-  - {fileID: 21300000, guid: 8b069de23ae3a4840b2d321aa554adc0, type: 3}
-  - {fileID: 21300000, guid: f7c24014e860f7741aad487936289d82, type: 3}
-  - {fileID: 21300000, guid: 0a37acfd0fc823c46856bb0208b99bae, type: 3}
-  - {fileID: 21300000, guid: d3713fc14627e114db0cd32802556be1, type: 3}
-  - {fileID: 21300000, guid: e35f3901c4696f24c9f4847dc6a2a240, type: 3}
-  - {fileID: 21300000, guid: a1be74b67f65c3f4eac68d234495de07, type: 3}
-  - {fileID: 21300000, guid: 955e24b54ecb73540b8adf4237dc70ab, type: 3}
-  - {fileID: 21300000, guid: 29bbe963273e4624f904bd771110f4c7, type: 3}
-  gunList: []
 --- !u!1 &1716045179
 GameObject:
   m_ObjectHideFlags: 0
@@ -14148,29 +14117,13 @@ PrefabInstance:
       propertyPath: slots.Array.data[9]
       value: 
       objectReference: {fileID: 1955066358}
-    - target: {fileID: -8861678424554942278, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
-      propertyPath: itemAmount.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3751115259982364914, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b2a3f9280f1264b43adfb65743ed556a, type: 3}
-    - target: {fileID: 4353671932550339317, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
-      propertyPath: m_TagString
-      value: playerHand
-      objectReference: {fileID: 0}
     - target: {fileID: 4953932730445105109, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
       propertyPath: maxDamage
-      value: 1000
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4953932730445105109, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
       propertyPath: minDamage
-      value: 999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4953932730445105109, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
-      propertyPath: projectileCooldown
-      value: 0.5
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4953932730445105111, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
       propertyPath: m_Name
@@ -14227,18 +14180,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4953932730445105111, guid: e449e2a88293e3744ad168e79dc9b360, type: 3}
   m_PrefabInstance: {fileID: 4953932729396283267}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4953932729396283269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4953932729396283268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a97b9eec18cc2fe4c9f228103439c243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHand: {fileID: 1707414576}
-  handList: []
-  gunList: []

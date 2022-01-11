@@ -66,6 +66,8 @@ public class ShopMenu : MonoBehaviour
             GameObject shopItem = Instantiate(shopItemButton[shopItemIndex], shopMechanic.slots[i].transform, false);
             shownShopItem.Add(shopItem);
         }
+
+        shownShopItemIndex.Clear();
     }
 
     public void CloseShop()
