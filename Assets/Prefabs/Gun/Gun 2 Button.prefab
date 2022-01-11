@@ -147,9 +147,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 8754287449002932562}
   price: 5
+  minDamage: 25
+  maxDamage: 35
+  projectileCooldown: 0.5
   coinType: 0
   isBuyValid: 0
   isSold: 0
   gunIndex: 1
   playerHands: {fileID: 0}
-  shopMechanic: {fileID: 0}
+  shopMenu: {fileID: 0}

@@ -94,14 +94,14 @@ public class PlayerStats : MonoBehaviour
 
     private IEnumerator RegenShield()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
 
         while (shield < maxShield)
         {
             shield += 1;
             CheckOverShield();
             setShieldUI();
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(3);
         }
 
         checkRegenIsActive = false;

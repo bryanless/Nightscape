@@ -39,8 +39,14 @@ public class LevelMechanic : MonoBehaviour
         int positionX = Random.Range(-10, 10);
         int positionY = Random.Range(-10, 10);
         Vector2 enemyPosition = new Vector2(player.transform.position.x + positionX, player.transform.position.y + positionY);
-        var enemy = Instantiate(enemyType, enemyPosition, Quaternion.identity);
+        GameObject enemy = Instantiate(enemyType, enemyPosition, Quaternion.identity);
         enemy.GetComponent<EnemyReceiveDamage>().levelMechanic = this;
+        if (level != 1)
+        {
+            enemy.GetComponent<EnemyReceiveDamage>().maxHealth += (PlayerStats.playerStats.maxHealth * (150f / 100f));
+            enemy.GetComponent<EnemyProjectile>().minDamage += ((PlayerStats.playerStats.maxHealth) * (1f / 100f) * (level));
+            enemy.GetComponent<EnemyProjectile>().maxDamage += ((PlayerStats.playerStats.maxHealth) * (5f / 100f) * (level));
+        }
         enemyAmount++;
     }
 
@@ -54,21 +60,10 @@ public class LevelMechanic : MonoBehaviour
     public void startLevel()
     {
         level += 1;
-        Debug.Log("level " + level);
 
         enemyDead = 0;
         enemyAmount = 0;
-        //if (level == 2)
-        //{
-        //    enemyCount += 2;
-        //}
-        //else
-        //{
-        //    enemyCount += Random.Range(1, level);
-        //}
-
-        enemyCount += 2;
-
+        enemyCount += Random.Range(1, 4);
 
         for (int i = 0; i < enemyCount; i++)
         {
@@ -92,7 +87,6 @@ public class LevelMechanic : MonoBehaviour
 
     void endLevel()
     {
-        Debug.Log("end level | " + enemyAmount + " "  + enemyDead);
         if (enemyAmount <= enemyDead)
         {
             // Level complete
